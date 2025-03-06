@@ -32,7 +32,7 @@ def process_pdf_bookmark(input_file, output_file):
         # 提取匹配到的页码
         page = page_match.group(1)
         # 提取当前行中页码之前的内容，并去除前后的特殊字符，该内容为目录标题
-        content_match = re.search(r'^[\u4e00-\u9fa5a-zA-Z\s()0-9]*', line)
+        content_match = re.search(r'^[\u4e00-\u9fa5a-zA-Z\s()0-9=、]*', line)
         content = content_match.group()
         # 使用正则表达式匹配目录标题开头的数字编号，如 1、1.1、1.1.1 等
         level_match = re.match(r'^(\d+(?:\.\d+)*)\D*', content)
